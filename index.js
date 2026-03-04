@@ -1,5 +1,6 @@
 import { Hono } from 'hono'
 import { logger } from 'hono/logger'
+import { serveStatic } from 'hono/bun'
 import nodemailer from 'nodemailer'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
@@ -55,6 +56,9 @@ app.get('/health', (c) => {
     serverDateTime: new Date().toISOString(),
   })
 })
+
+// Serve static assets (favicons, manifest, etc.)
+app.use('/*', serveStatic({ root: './public' }))
 
 // Serve the coming-soon HTML page
 app.get('/', async (c) => {
