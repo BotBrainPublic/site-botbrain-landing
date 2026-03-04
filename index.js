@@ -96,7 +96,7 @@ app.post('/api/v1/waitlist', async (c) => {
 
   try {
     await transporter.sendMail({
-      from: SMTP_FROM,
+      from: `BotBrain Waiting List <${SMTP_FROM}>`,
       to: NOTIFY_RECIPIENTS.join(', '),
       subject: `BotBrain Waitlist: ${firstName.trim()} ${(lastName || '').trim()}`.trim(),
       html: emailHtml,
