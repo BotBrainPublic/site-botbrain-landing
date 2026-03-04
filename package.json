@@ -1,0 +1,14 @@
+{
+  "name": "botbrain-comingsoon",
+  "version": "0.1.0",
+  "description": "BotBrain Coming Soon landing page with waitlist signup",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch index.js",
+    "start": "bun run index.js"
+  },
+  "dependencies": {
+    "hono": "^4.6.0",
+    "nodemailer": "^6.9.0"
+  }
+}
